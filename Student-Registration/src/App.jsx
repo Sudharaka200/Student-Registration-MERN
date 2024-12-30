@@ -1,10 +1,17 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import User from './User'
 import './App.css'
+import UserForm from './UserForm'
 
 function App() {
   return (
     <>
-    <h1>Student Registration</h1>
-      <button className='btn-students'>Students</button>
+     <BrowserRouter>
+        <Routes>
+          <Route index element={<User />} />
+          <Route path='/userform' element={<UserForm />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
