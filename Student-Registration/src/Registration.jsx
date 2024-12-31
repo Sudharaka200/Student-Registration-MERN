@@ -1,18 +1,21 @@
 import { Button, Grid, Input, Typography } from "@mui/material";
+import { useState } from "react";
 
 const Registration = () => {
+    const [id, setId] = useState()
+    const [name, setName] = useState()
     return (
         <Grid
             container
             spacing={2}
             sx={{
-                backgroundColor: "",
+                backgroundColor: "#fff",
                 marginBottom: "30px",
                 display: "block",
             }}
         >
             <Grid item xs={12}>
-                <Typography component={"h1"} sx={{ color: "#ffff" }}>
+                <Typography component={"h1"} sx={{ color: "black" }}>
                     User Form
                 </Typography>
             </Grid>
@@ -21,7 +24,7 @@ const Registration = () => {
                     component={"label"}
                     htmlFor="id"
                     sx={{
-                        color: "#00000",
+                        color: "black",
                         marginRight: "20px",
                         fontSize: "16px",
                         width: "100px",
@@ -35,8 +38,8 @@ const Registration = () => {
                     id="id"
                     name="id"
                     sx={{ width: "400px" }}
-                    value={""}
-                    onChange={() => {}}
+                    value={id}
+                    onChange={e => setId(e.target.value)}
                 />
             </Grid>
             <Grid item xs={12} sm={6} sx={{ display: "flex" }}>
@@ -44,7 +47,7 @@ const Registration = () => {
                     component={"label"}
                     htmlFor="name"
                     sx={{
-                        color: "#00000",
+                        color: "black",
                         marginRight: "20px",
                         fontSize: "16px",
                         width: "100px",
@@ -58,8 +61,8 @@ const Registration = () => {
                     id="name"
                     name="name"
                     sx={{ width: "400px" }}
-                    value={""}
-                    onChange={() => {}}
+                    value={name}
+                    onChange={e => setName(e.target.value)}
                 />
             </Grid>
             <Button
