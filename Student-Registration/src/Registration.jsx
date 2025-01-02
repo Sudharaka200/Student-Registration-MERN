@@ -1,7 +1,7 @@
 import { Button, Grid, Input, Typography } from "@mui/material";
 import { useState } from "react";
 
-const Registration = () => {
+const Registration = (addUser) => {
     const [id, setId] = useState()
     const [name, setName] = useState()
     return (
@@ -78,6 +78,7 @@ const Registration = () => {
                         backgroundColor: "00c6e6",
                     },
                 }}
+                onClick={() => addUser({id: id, name: name})}
             >
                 Add
             </Button>
